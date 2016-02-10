@@ -1,3 +1,27 @@
 ecommerce_homepage:
     path:     /
-    defaults: { _controller: EcommerceBundle:Default:index }
+    defaults: { _controller: EcommerceBundle:Produit:index }
+
+ecommerce_ajouter:
+    path:     /produit/ajouter
+    defaults: { _controller: EcommerceBundle:Produit:ajouter }
+
+ecommerce_modifier:
+    path:     /
+    defaults: { _controller: EcommerceBundle:Produit:index }
+
+ecommerce_voir:
+    path:     /produit/voir/{id}
+    defaults: { _controller: EcommerceBundle:Produit:voir }
+    requirements:
+        id:  \d+
+
+panier_voir:
+    path:     /panier/voir/{id}
+    defaults: { _controller: EcommerceBundle:Panier:voir }
+    requirements:
+        id:  \d+
+
+panier_ajouter:
+    path:     /produit/ajouter
+    defaults: { _controller: EcommerceBundle:Panier:ajouter }

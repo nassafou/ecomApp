@@ -12,4 +12,9 @@ class ProduitController extends Controller
         return $this->render('EcommerceBundle:Default:index.html.twig', array('message' => $message ));
     }
     
+    public function livraisonAction()
+    {
+        
+    }
+    
 }
