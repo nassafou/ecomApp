@@ -1,0 +1,11 @@
+panier_voir:
+    path:     /panier/panier
+    defaults: { _controller: EcommerceBundle:Panier:panier }
+
+panier_livraison:
+    path:     /panier/livraison
+    defaults: { _controller: EcommerceBundle:Panier:livraison }
+
+panier_validation:
+    path:     /panier/validation
+    defaults: { _controller: EcommerceBundle:Panier:validation }
