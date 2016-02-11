@@ -3,16 +3,37 @@
 namespace MyApp\EcommerceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use MyApp\EcommerceBundle\Controller\Produit;
 
-class ProduitController extends Controller
+class PanierController extends Controller
 {
-    public function indexAction()
+    public function panierAction()
     {
-        $message = "ici";
-        return $this->render('EcommerceBundle:Default:index.html.twig', array('message' => $message ));
+    
+        
+        return $this->render('EcommerceBundle:Panier:panier.html.twig');
     }
     
     public function livraisonAction()
+    {
+        
+        
+        return $this->render('EcommerceBundle:Panier:livraison.html.twig');
+    }
+    
+    public function validationAction()
+    {
+        
+        
+        return $this->render('EcommerceBundle:Panier:validation.html.twig');
+    }
+    
+    
+    public function rechercheAction()
+    {
+        
+    }
+    public function rechercheTraitement()
     {
         
     }
