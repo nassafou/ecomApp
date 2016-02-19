@@ -23,4 +23,11 @@ class Utilisateurs extends BaseUser
         parent::__construct();
         // your own logic
     }
+    
+    
+    /**
+     *@ORM\OneToMany(targetEntity="Ecommerce\EcommerceBundle\Entity\Commandes",,mappedBy="utilisateur" cascade={"persist","remove"})
+     *@ORM\JoinColumn(nullable=true)
+     */
+    private $commandes;
 }
