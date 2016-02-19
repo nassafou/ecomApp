@@ -20,7 +20,26 @@ class Produits
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+      /**
+     *@ORM\OneToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
+     *@ORM\JoinColumn(nullable=false)
+     */
+    private $image;
+    
+    /**
+     *@ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
+     *@ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
+    
+    /**
+     *@ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
+     *@ORM\JoinColumn(nullable=false)
+     */
+    private $tva;
+    
+    
     /**
      * @var string
      *
