@@ -3,6 +3,7 @@
 namespace MyApp\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Produits
@@ -21,20 +22,20 @@ class Produits
      */
     private $id;
     
-      /**
-     *@ORM\OneToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
+     /**
+     *@ORM\OneToOne(targetEntity="MyApp\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
      *@ORM\JoinColumn(nullable=false)
      */
-    private $image;
+    protected $image;
     
     /**
-     *@ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
+     *@ORM\ManyToOne(targetEntity="MyApp\EcommerceBundle\Entity\Categories", cascade={"persist","remove"})
      *@ORM\JoinColumn(nullable=false)
      */
     private $categorie;
     
     /**
-     *@ORM\ManyToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
+     *@ORM\ManyToOne(targetEntity="MyApp\EcommerceBundle\Entity\Tva", cascade={"persist","remove"})
      *@ORM\JoinColumn(nullable=false)
      */
     private $tva;
@@ -169,5 +170,74 @@ class Produits
     public function getDisponible()
     {
         return $this->disponible;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \MyApp\EcommerceBundle\Entity\Media $image
+     * @return Produits
+     */
+    public function setImage(\MyApp\EcommerceBundle\Entity\Media $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \MyApp\EcommerceBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \MyApp\EcommerceBundle\Entity\Categories $categorie
+     * @return Produits
+     */
+    public function setCategorie(\MyApp\EcommerceBundle\Entity\Categories $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \MyApp\EcommerceBundle\Entity\Categories 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Set tva
+     *
+     * @param \MyApp\EcommerceBundle\Entity\Tva $tva
+     * @return Produits
+     */
+    public function setTva(\MyApp\EcommerceBundle\Entity\Tva $tva)
+    {
+        $this->tva = $tva;
+
+        return $this;
+    }
+
+    /**
+     * Get tva
+     *
+     * @return \MyApp\EcommerceBundle\Entity\Tva 
+     */
+    public function getTva()
+    {
+        return $this->tva;
     }
 }

@@ -3,6 +3,7 @@
 namespace MyApp\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Categories
@@ -22,7 +23,7 @@ class Categories
     private $id;
     
     /**
-     *@ORM\OneToOne(targetEntity="Ecommerce\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
+     *@ORM\OneToOne(targetEntity="MyApp\EcommerceBundle\Entity\Media", cascade={"persist","remove"})
      *@ORM\JoinColumn(nullable=false)
      */
     private $image;
@@ -66,5 +67,28 @@ class Categories
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \MyApp\EcommerceBundle\Entity\Media $image
+     * @return Categories
+     */
+    public function setImage(\MyApp\EcommerceBundle\Entity\Media $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \MyApp\EcommerceBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
