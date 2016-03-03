@@ -1,0 +1,18 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+
+{% block titile %}
+   Accueil-{{ parent() }}
+{% endblock%}
+
+{% block body %}
+<div class="container">
+		<div class="row">
+			<div class="span12">
+				{{ categorie.nom }}
+				
+			</div>
+		</div>
+	</div>
+{%endblock %}
